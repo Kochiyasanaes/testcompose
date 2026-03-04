@@ -7,4 +7,6 @@ data class Message(
     val role: String,      // "user" | "assistant"
     val content: String,
     val timestamp: Long = System.currentTimeMillis()
-)
+) {
+    val isFromUser: Boolean get() = role == "user"
+}
