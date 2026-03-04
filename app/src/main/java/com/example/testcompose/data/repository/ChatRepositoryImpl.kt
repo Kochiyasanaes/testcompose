@@ -48,7 +48,7 @@ class ChatRepositoryImpl : ChatRepository {
         // 构建历史记录（排除最后一条）
         val history = messages.dropLast(1).map { msg ->
             JSONObject().apply {
-                put("role", if (msg.isFromUser) "user" else "assistant")
+                put("role", if (msg.role == "user") "user" else "assistant")
                 put("content", msg.content)
             }
         }
@@ -110,7 +110,7 @@ class ChatRepositoryImpl : ChatRepository {
         
         val history = messages.dropLast(1).map { msg ->
             JSONObject().apply {
-                put("role", if (msg.isFromUser) "user" else "assistant")
+                put("role", if (msg.role == "user") "user" else "assistant")
                 put("content", msg.content)
             }
         }
