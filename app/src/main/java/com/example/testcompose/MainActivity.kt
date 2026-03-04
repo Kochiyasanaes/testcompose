@@ -19,9 +19,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val repository = ChatRepositoryImpl(
-            apiKey = "sk-Sc7iGLtGgMLfQ6h6l9vkPsFDhYHcikDrxNxXthFFr80ljkTu"
-        )
+        // 初始化 Repository - 连接本地 AI 服务器
+        // 确保服务器已启动: python server/server.py
+        val repository = ChatRepositoryImpl()
         val viewModel = ChatViewModel(repository)
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
             != PackageManager.PERMISSION_GRANTED) {
