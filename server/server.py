@@ -247,7 +247,7 @@ async def chat_stream(request: ChatRequest):
 if __name__ == "__main__":
     import uvicorn
     
-    print(f"🚀 AI Proxy Server starting...")
+    print(f"[OK] AI Proxy Server starting...")
     print(f"   Provider: {AI_PROVIDER}")
     print(f"   Model: {PROVIDERS[AI_PROVIDER]['model']}")
     print(f"   URL: http://{HOST}:{PORT}")

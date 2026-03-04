@@ -25,8 +25,11 @@ class ChatRepositoryImpl : ChatRepository {
 
     // 本地服务器地址配置
     companion object {
-        // 模拟器使用这个地址访问主机
-        private const val LOCAL_SERVER_URL = "http://10.0.2.2:8000"
+        // 真机调试使用电脑 IP（确保手机和电脑在同一 WiFi）
+        private const val LOCAL_SERVER_URL = "http://192.168.1.68:8000"
+        
+        // 模拟器用这个地址：
+        // private const val LOCAL_SERVER_URL = "http://10.0.2.2:8000"
         
         // 真机使用时，改成电脑的局域网 IP，例如：
         // private const val LOCAL_SERVER_URL = "http://192.168.1.100:8000"
